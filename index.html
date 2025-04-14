@@ -1,27 +1,31 @@
-<!DOCTYPE html><html lang="en"><head>
-     <link rel="shortcut icon" href="https://iconarchive.com/download/i108305/google/noto-emoji-smileys/10101-alien.ico"/>
-    <title> Alien Runner Game </title>
-    <font color= "white">
-    <CENTER><b><i> NPJ </i></b></CENTER>
-    <h1 align= "CENTER"><b>👽🛸 ALIEN RUNNER GAME 🛸👽</b> </h1>
-    <h3 align= "CENTER"><font color= "blue">🌌 INFINITY AND BEYOND 🌌</font> </h3>
-    <p align= "CENTER"><b> <font color= "blue"> INFO: </font> </b> Press <b> space </b> to jump from the devil and the skull and obtain the coin to boost your coin power pack. If you go to the devil, <font color= "red"> your score and coin power pack will become zero </font> but if you go to the skull,<font color= "red"> you are dead. </font> </p>
-    </font>
-     <CENTER>
-     <a href= "https://navaneet239.github.io/my_space_infinity_games/"> To see the other games, please click here </a>  
-     </CENTER>
-    <hr size= "11" color= "white">
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-    <script src="p5.play.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-  </head>
-  <body bgcolor="black">
-    <script src="sketch.js"></script>
-       
+<head>
+  <link rel="shortcut icon" href="https://iconarchive.com/download/i108305/google/noto-emoji-smileys/10101-alien.ico" />
+  <title> Alien Runner Game </title>
+  <script src="p5.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <script src="p5.play.js"></script>
+</head>
 
-    
+<body>
+  <div class="noise"></div>
+  <div class="overlay"></div>
+  <nav>
+    <ul>
+      <li onclick="window.open('https://navaneet239.github.io/AlienRunner/', '_blank')" id="levelLi">Levels</li>
+      <div class="starNav">*</div>
+      <li id="snapLi">THE ALIEN RUNNER Lv1</li>
+      <div class="starNav">*</div>
+      <li onclick="window.open('https://github.com/navaneet239/AlienRunner', '_blank')">Repo</li>
+    </ul>
+    <p>Click on the Alien to begin. Press <code>SPACEBAR</code> to Jump.</p>
+    <p>To Do: Collect coins as you jump while dodging obstacles - Devil the theif & Skull the Killer. And Be aware not to go too high!</p>
+  </nav>
+  <script src="sketch.js"></script>
+</body>
 
-</body></html>
+</html>
