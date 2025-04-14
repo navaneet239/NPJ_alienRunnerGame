@@ -1,7 +1,182 @@
-html, body {
+ /* --- Styling for index.html --- */
+ @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
   margin: 0;
   padding: 0;
+  color: rgb(205, 255, 198);
+  overflow: hidden;
+  user-select: none;
+  background-color: #000000;  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  animation: bgGlow 0.1s infinite;
+  width: 100%;
+  height: 100%;
+  line-height: 0.05;
+  text-align: center;
 }
-canvas {
+
+a{  color: rgb(205, 255, 198);}
+a:hover {
+  color: chartreuse;
+}
+
+@keyframes bgGlow {
+  0%{
+    background: radial-gradient(circle, #051c02, #000000);
+  }
+  50%{
+    background: radial-gradient(circle, #093203, #000000);
+  }
+  100%{
+    background: radial-gradient(circle, #051c02, #000000);
+  }
+}
+
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.02;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: auto 4px;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
   display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(54, 128, 32, 0.2) 2%,
+    chartreuse 3%,
+    rgba(50, 128, 32, 0.2) 3%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  animation: scan 7.5s linear 0s infinite;
+}
+
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%,
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
+p{margin-top: 1.5rem; opacity: 0.75;}
+
+code{
+  background: #093203;
+  padding: 5px;
+  border-radius: 5px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+ 
+main{
+  margin: 10px;
+  margin-top: 8rem;
+  overflow: hidden;
+  border: 2px solid #009900;
+  height: calc(20rem + 25px);
+  padding: 10px;
+  border-radius: 3.5px;
+}
+
+
+nav{
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 15px);
+  width: 100%;
+  padding-top: 0.5rem;
+  transform: translateX(-50%);
+}
+
+nav ul{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  font-size: 22px;
+}
+nav ul li{padding-bottom: 10px;}
+nav ul li:hover{
+  border-bottom: 2.5px solid rgb(205, 255, 198);
+  cursor: url('Assets/link_select.cur'), pointer;
+}
+nav ul li.active{border-bottom: 2.5px solid rgb(205, 255, 198); opacity: 0.75;}
+
+@keyframes blink {
+  0%   { opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+.stars-bg__star {
+  opacity: 0;
+  animation: blink 3s infinite;
+}
+.stars-bg__blink-2 {
+  animation-delay: 1s;
+}
+.stars-bg__blink-3 {
+  animation-delay: 2s;
+}
+
+#snapLi{
+  font-size: 35px;
+  filter: drop-shadow(0px 0px 5px chartreuse);
+  transform: translateY(-5px) scale(1.1);
+}
+
+.starNav{
+  font-size: 35px;
+}
+
+canvas{
+  border: 1px solid  #093203;
+  border-radius: 2.5px;
 }
